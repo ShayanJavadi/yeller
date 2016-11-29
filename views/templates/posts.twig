@@ -1,0 +1,24 @@
+{% for Post in Feed %}
+<div class="yellBox">
+  <div class="col-sm-2">
+    <img class="square yellBoxImage" src="{{ Post.authorPicture}}" alt="Avatar" />
+  </div>
+  <div class="yellBody col-sm-10">
+    <a href="{{ path_for('profile', { 'name': Post.authorName}) }}"><h4><strong>{{ Post.authorName }}</a></strong><span class="yellDate"> - {{ Post.created_at.diffForHumans }}</span></h4>
+    <p>
+      {{ Post.body }}
+    </p>
+
+    {% if sessionId == Post.user_id %}
+    <form class="deleteYell pull-right"  class="" onsubmit method="post">
+    <button  class="btn btn-default deleteYell pull-right" data-id="{{ Post.id }}" type="button" name="button">Delete</button>
+    <!-- soon
+    <button class="btn btn-default" type="button" name="button">Yell back</button>
+    <button class="btn btn-default" type="button" name="button">Re-yell</button>
+    <button class="btn btn-default" type="button" name="button">Favorite</button> -->
+    {% endif %}
+
+    </form>
+  </div>
+</div>
+{% endfor %}

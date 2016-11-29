@@ -1,0 +1,303 @@
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.afterBanner{
+	display: block;
+  z-index: 5;
+}
+.changeBannerButton{
+  margin-left: 50%;
+}
+#contact{
+	position: relative;
+	top: 200px;
+}
+#bannerLabel{
+	word-wrap: break-word;
+	height: 52px;
+}
+#flashPost{
+  font-size: 20px;
+  display:none;
+  position:fixed;
+  text-align: center;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   z-index:9999;
+   float: left;
+   border-radius:0px
+}
+
+.panel-heading{
+	background-color: blue;
+}
+
+
+
+#flashDelete{
+  font-size: 20px;
+  display:none;
+  position:fixed;
+  text-align: center;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   z-index:9998;
+   float: left;
+   border-radius:0px
+}
+
+.headerLine{
+	height: 30px;
+	border-bottom: 2px solid #e1e8ed;
+	background-color: white;
+	position: relative;
+	top: -20px;
+}
+button{
+	margin: 0, auto;
+}
+.square {
+    background: white;
+    max-width:13vw;
+    min-width:20px;
+    width: 13vw;
+    height: 13vw;
+}
+.userBox{
+	position: relative;
+	top: -93px;
+}
+.yellDate{
+  color: #888;
+}
+.yellBox{
+  background-color: white;
+  border: 2px solid #e1e8ed;
+
+  padding-bottom: 15px;
+  margin-bottom: 50px;
+  box-shadow: 1px 1px 2px #888888;
+  overflow: hidden;
+}
+
+.yellBoxImage{
+  min-width:60px;
+  min-height: 60px;
+  margin-top: 5px;
+  float: left;
+  background: white;
+  max-width:5vw;
+  width: 5vw;
+  height: 5vw;
+}
+
+.yellBody {
+  float: left;
+}
+.recBox{
+	background-color: white;
+	border: 1px solid #e1e8ed;
+	padding-bottom: 15px;
+	margin-bottom: 10px;
+	box-shadow: 1px 1px 2px #888888;
+	overflow: hidden;
+}
+.recImage{
+  min-width:60px;
+  min-height: 60px;
+  margin-top: 5px;
+  float: left;
+  background: white;
+  max-width:2vw;
+  width: 2vw;
+  height: 2vw;
+}
+.recBody{
+	padding-left: 45px;
+
+}
+.masthead{
+		display: block;
+    z-index: 5;
+    position: relative;
+		width: 100%;
+		z-index: -5;
+		max-height: 700px;
+		min-height: 400px;
+    background-size: 100% 100%;
+}
+
+.paddingTop{
+  margin-top: 150px;
+}
+
+/*bologna*/
+body{
+  margin-bottom: 20px;
+  padding-bottom: 50px;
+  background-color: #f5f8fa;
+  font-family: 'Arimo', sans-serif;
+}
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
+p{
+  font-family: 'Arimo', sans-serif;
+  padding-right: 20px;
+  line-height: 35px;
+  font-size: 17px;
+}
+
+a{
+  color: black;
+}
+.black{
+  color: black;
+}
+
+div{
+  word-wrap: break-word;
+}
+form {
+    display: inline;
+}
+
+#home{
+	position: relative;
+	top: -250px;
+  width: 70%;
+}
+
+#float{
+  float: left;
+}
+.homeImage{
+  height: 28%;
+}
+.newReviewsOverflow{
+  overflow:auto;
+}
+.reviewsImage{
+  max-height: 200px;
+}
+.reviewSnippets{
+
+  float: left;
+  font-size: 15px;
+}
+
+.customSearchOptions{
+  width: 10px;
+  background-color: #ebeff1;
+  border-color: #ebeff1;
+  border-radius: 0%;
+  color: #777777;
+}
+.customSearchGlyph{
+  color: #777777;
+}
+
+.customSearchButton{
+  border-radius: 100%;
+  height: 34px;
+  background-color: #ebeff1;
+  border: none;
+}
+.customSearchButton:hover{
+  background-color: #444444;
+}
+.customSearchInput:focus{
+  background-color: #666666;
+  border:none;
+  outline:0;
+}
+.customSearchInput{
+  background-color: #ebeff1;
+    border-color:#ebeff1;
+    border: none;
+}
+.customSearchInput:focus, .customSearchOptions:focus{
+  background-color: white;
+  border-color: black;
+}
+
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #222222;
+    font-size: 170%;
+    border: none;
+    color: white;
+}
+
+.wrapper {
+  position: static;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+
+}
+.navbar-custom {
+  /*background-color: #21355a;*/
+  background-color: #1b2e49;
+  border: none;
+}
+.title{
+  text-align: center;
+  font-weight: bold;
+}
+
+.nav{
+  color: black;
+}
+.content{
+  background-color: white;
+  border: 2px solid #e1e8ed;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  box-shadow: 1px 1px 2px #888888;
+}
+
+
+.white{
+  background-color: white;
+}
+
+hr{
+  color: #f00;
+  background-color: #e1e8ed;
+  height: 1px;
+  width: 100%;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+
+.overflow{
+    overflow-y: scroll;
+    height: 250px;
+}
+
+.middle{
+  text-align: center;
+}
+
+
+
+#middleOfPage{
+  min-height: 840px;
+}

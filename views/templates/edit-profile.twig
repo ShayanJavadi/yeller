@@ -1,0 +1,50 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+<div class="headerImage">
+  <img src="{{User.banner}}" alt="Your banner" class="masthead">
+</div>
+<form class="" action="{{ path_for('updateProfile') }}" method="post" enctype="multipart/form-data">
+  <div class="container content" id="home">
+    <div class="row">
+      <div class="middle" id="countersAndButtons">
+        <button id="followerCounter" class="btn btn-success"type="submit" name="button"><strong>Save changes</strong><br><br></button>
+        <a href="{{ path_for('home') }}"><button id="followerCounter" class="btn btn-danger"type="button" name="button"><strong>Discard changes</strong><br><br></button></a>
+        <input type="file" name="banner" id="banner" class="inputfile">
+        <label id="bannerLabel"class="btn btn-info" for="banner"><strong>Change banner</strong></label>
+      </div>
+      <br>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-md-3 userBox">
+        <img class="square" src="{{ User.avatar }}" alt="Avatar" />
+        <div>
+          <br>
+          <input type="file" name="avatar" id="avatar" class="inputfile">
+          <label class="btn btn-info btn-block" for="avatar"><strong>Change avatar</strong></label>
+          <input  class=" form-control" type="text" name="name" value="{{ User.name }}">
+          <textarea class=" form-control" name="about" rows="8" cols="40">{{ User.about }}</textarea>
+          <div id="flashDelete" class="alert alert-success"><strong>Yell successfully deleted!</strong></div>
+        {% if sessionId != User.id %}
+          <div id="flashPost" class="alert alert-success"><strong>Yell successfully posted! Go to your <a href="{{ path_for('home') }}">profile</a> to view it!</strong></div>
+        {% else %}
+          <div id="flashPost" class="alert alert-success"><strong>Yell successfully posted!</strong></div>
+        {% endif %}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <br>
+        <hr>
+        <div id="posts">
+        {% include 'templates/posts.twig' %}
+        </div>
+      </div>
+      <!-- <form action="#" v-on:submit="postStatus">
+
+      </form> -->
+    </div>
+
+  </div>
+</form>
+{% endblock %}

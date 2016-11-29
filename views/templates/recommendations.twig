@@ -1,0 +1,18 @@
+<h2><strong>Who to follow</strong></h2>
+
+{% if Recommendations|length == 0 %}
+<p>No recommendations for now :(</p>
+{% else %}
+{% for Recommendation in Recommendations %}
+<a href="{{ path_for('profile', { 'name': Recommendation.name}) }}">
+<div class="recBox">
+  <div class="col-sm-2">
+    <img class="recImage" src="{{ Recommendation.avatar}}" alt="Avatar" />
+  </div>
+  <div class=" recBody col-sm-10" >
+    <strong>{{ Recommendation.name }}</strong> - <br />{{ Recommendation.about }}
+  </div>
+</div>
+</a>
+{% endfor %}
+{% endif %}

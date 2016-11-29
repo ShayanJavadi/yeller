@@ -1,0 +1,69 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+<div class="headerImage">
+  <img src="{{User.banner}}" alt="Your banner" class="masthead">
+</div>
+  <div class="container content" id="home">
+    <div class="row">
+      <div class="middle" id="countersAndButtons">
+        <a href="{{ path_for('yells', { 'name': User.name}) }}"><button id="yellCounter" class="btn btn-primary"type="button" name="button"><strong>YELLS</strong><br>{{ Posts|length }}</button></a>
+        <a href="{{ path_for('followings', { 'name': User.name}) }}"><button class="btn btn-default"type="button" name="button"><strong>FOLLOWING</strong><br>{{ Followings|length }}</button></a>
+        <a href="{{ path_for('followers', { 'name': User.name}) }}"><button class="btn btn-default"type="button" name="button"><strong>FOLLOWERS</strong><br>{{ Followers|length }}</button></a>
+        {% if sessionId == User.id %}
+        <a href="{{path_for('updateProfile')}}"><button id="followerCounter" class="btn btn-default"type="button" name="button"><strong>Edit profile</strong><br><br></button></a>
+        {% endif %}
+        <span id="followPersonButton">
+          {% if sessionId != User.id and isFollowing == 0 %}
+          <form class="followPerson" action="{{ path_for('follow', { 'name': User.name }) }}" method="post">
+           <button class="btn btn-default"type="submit" name="button"><strong>Follow</strong><br>+</button>
+          </form>
+          {% else %}
+          {% if sessionId != User.id %}
+          <form class="unFollowPerson" action="{{ path_for('unfollow', { 'name': User.name }) }}" method="post">
+            <button class="btn btn-info"type="submit" name="button"><strong>Following</strong><br>-</button>
+          </form>
+          {% endif %}
+          {% endif %}
+        </span>
+      </div>
+      <br>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-md-3 userBox">
+        <img class="square" src="{{ User.avatar }}" alt="Avatar" />
+
+        <a href="{{ path_for('profile', { 'name': User.name }) }}"><h2><strong>{{ User.name }}</strong></h2></a>
+
+        <p>
+          {{ User.about }}
+        </p>
+      </div>
+      <div class="col-md-6">
+        <form class="postYell" action="{{ path_for('yell')}}" method="post">
+            <div id="flashDelete" class="alert alert-success"><strong>Yell successfully deleted!</strong></div>
+          {% if sessionId != User.id %}
+            <div id="flashPost" class="alert alert-success"><strong>Yell successfully posted! Go to your <a href="{{ path_for('home') }}">profile</a> to view it!</strong></div>
+          {% else %}
+            <div id="flashPost" class="alert alert-success"><strong>Yell successfully posted!</strong></div>
+          {% endif %}
+          <div class="form-group">
+              <textarea id="yellInput" name="yellBody" class="form-control" cols="12" rows="5" placeholder="YELL SOMETHING" maxlength="140" required v-model="post"></textarea>
+          </div>
+          <input id="postYell" type="submit" onsubmit="myFunction()" value="Yell stuff" class="btn btn-default btn-lg yellButton pull-right">
+          <br>
+        </form>
+        <br>
+        <hr>
+        <div id="posts">
+        {% include 'templates/posts.twig' %}
+        </div>
+      </div>
+      <!-- <form action="#" v-on:submit="postStatus">
+
+      </form> -->
+    </div>
+
+  </div>
+{% endblock %}
